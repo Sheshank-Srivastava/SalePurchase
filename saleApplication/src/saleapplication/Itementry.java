@@ -8,6 +8,8 @@ package saleapplication;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.sql.*;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -94,13 +96,19 @@ public class Itementry extends JFrame{
         /**
          * Button Action
          */
-         
+        
         insert.addActionListener(new ActionListener(){
-           String iCode=itemCodetf.getText(),iName=itemNametf.getText(),rat=ratetf.getText();
-        String stockAvail=StockAvtf.getText(),minLev=minLeveltf.getText(),maxLev=maxLeveltf.getText();
-        String preor=preOrderLeveltf.getText();
+            
+            
             @Override
             public void actionPerformed(ActionEvent ae) {
+                String iCode=itemCodetf.getText();
+                String iName=itemNametf.getText();
+                String rat=ratetf.getText();
+                String stockAvail=StockAvtf.getText();
+                String minLev=minLeveltf.getText();
+                String maxLev=maxLeveltf.getText();
+                String preor=preOrderLeveltf.getText();
                 query ="select itemCode from itemdetail where itemCode=?";
                 try{
                     con = mc.getConnection();
@@ -108,7 +116,7 @@ public class Itementry extends JFrame{
                     ps.setString(1, itemCodetf.getText());
                     ResultSet p = ps.executeQuery();
                     if(p.next()){
-                        JOptionPane.showMessageDialog(insert, "Item already exist");
+                        JOptionPane.showMessageDialog(insert, "Item Code already exist");
                     }
                     else{
                         System.out.println("executing insert query");
@@ -124,17 +132,66 @@ public class Itementry extends JFrame{
                         ps2.setString(7, preor);
                         int p2=ps2.executeUpdate();
                         if(p2==1){
-                            System.out.println("successfull");                            
+                            JOptionPane.showConfirmDialog(insert, "Want to enter next");
+                            itemCodetf.setText("");
+                            itemNametf.setText("");
+                            ratetf.setText("");
+                             StockAvtf.setText("");
+                             minLeveltf.setText("");
+                            maxLeveltf.setText("");
+                            preOrderLeveltf.setText("");
                         }
                         else{
                             System.out.println("not");
                         }
-                              
+                        
                     }
                 }catch(ClassNotFoundException | SQLException e){
                     System.out.println(e);
                 }
             }
+        });
+        
+        delete.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                query ="delete from itemDetail where itemCode=?";
+                 
+                try {
+                    con = mc.getConnection();
+                    PreparedStatement ps =con.prepareStatement(query);
+                    ps.setString(1, itemCodetf.getText());
+                    int p = ps.executeUpdate();
+                    if(p==1){
+                        JOptionPane.showMessageDialog(delete,"Deletion is successfull");
+                    }
+                } catch (SQLException ex) {
+                    Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
+                } catch (ClassNotFoundException ex) {
+                    Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
+                }
+                        
+            }
+            
+        });
+        update.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                query ="select * from itemdetail where itemCode =?";
+                try{
+                    con = mc.getConnection();
+                    PreparedStatement ps = con.prepareStatement(query);
+                    ps.setString(1,itemCode.getText());
+                    
+                    if()
+                }
+                catch(Exception e){
+                    System.out.println(e);
+                }
+            }
+            
         });
         /**
          * Frame Attributes
