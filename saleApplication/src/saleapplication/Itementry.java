@@ -102,53 +102,7 @@ public class Itementry extends JFrame{
             
             @Override
             public void actionPerformed(ActionEvent ae) {
-                String iCode=itemCodetf.getText();
-                String iName=itemNametf.getText();
-                String rat=ratetf.getText();
-                String stockAvail=StockAvtf.getText();
-                String minLev=minLeveltf.getText();
-                String maxLev=maxLeveltf.getText();
-                String preor=preOrderLeveltf.getText();
-                query ="select itemCode from itemdetail where itemCode=?";
-                try{
-                    con = mc.getConnection();
-                    PreparedStatement ps =con.prepareStatement(query);
-                    ps.setString(1, itemCodetf.getText());
-                    ResultSet p = ps.executeQuery();
-                    if(p.next()){
-                        JOptionPane.showMessageDialog(insert, "Item Code already exist");
-                    }
-                    else{
-                        System.out.println("executing insert query");
-                        query ="insert into itemdetail values(?,?,?,?,?,?,?)";
-                        
-                        PreparedStatement ps2 = con.prepareStatement(query);
-                        ps2.setString(1, iCode);
-                        ps2.setString(2, iName);
-                        ps2.setString(3, rat);
-                        ps2.setString(4, stockAvail);
-                        ps2.setString(5, minLev);
-                        ps2.setString(6, maxLev);
-                        ps2.setString(7, preor);
-                        int p2=ps2.executeUpdate();
-                        if(p2==1){
-                            JOptionPane.showConfirmDialog(insert, "Want to enter next");
-                            itemCodetf.setText("");
-                            itemNametf.setText("");
-                            ratetf.setText("");
-                             StockAvtf.setText("");
-                             minLeveltf.setText("");
-                            maxLeveltf.setText("");
-                            preOrderLeveltf.setText("");
-                        }
-                        else{
-                            System.out.println("not");
-                        }
-                        
-                    }
-                }catch(ClassNotFoundException | SQLException e){
-                    System.out.println(e);
-                }
+              insert();
             }
         });
         
@@ -156,7 +110,76 @@ public class Itementry extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                query ="delete from itemDetail where itemCode=?";
+               delete();
+            }
+            
+        });
+        update.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                
+            }
+            
+        });
+        /**
+         * Frame Attributes
+         */
+        this.setLayout(null);
+        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
+        this.setVisible(true);
+        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+    }
+    private void insert(){
+        String iCode=itemCodetf.getText();
+        String iName=itemNametf.getText();
+        String rat=ratetf.getText();
+        String stockAvail=StockAvtf.getText();
+        String minLev=minLeveltf.getText();
+        String maxLev=maxLeveltf.getText();
+        String preor=preOrderLeveltf.getText();
+        query ="select itemCode from itemdetail where itemCode=?";
+        try{
+            con = mc.getConnection();
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, itemCodetf.getText());
+            ResultSet p = ps.executeQuery();
+            if(p.next()){
+                JOptionPane.showMessageDialog(this, "Item Code already exist");
+            }
+            else{
+                query ="insert into itemdetail values(?,?,?,?,?,?,?)";
+                
+                PreparedStatement ps2 = con.prepareStatement(query);
+                ps2.setString(1, iCode);
+                ps2.setString(2, iName);
+                ps2.setString(3, rat);
+                ps2.setString(4, stockAvail);
+                ps2.setString(5, minLev);
+                ps2.setString(6, maxLev);
+                ps2.setString(7, preor);
+                int p2=ps2.executeUpdate();
+                if(p2==1){
+                    JOptionPane.showConfirmDialog(insert, "Want to enter next");
+                    itemCodetf.setText("");
+                    itemNametf.setText("");
+                    ratetf.setText("");
+                    StockAvtf.setText("");
+                    minLeveltf.setText("");
+                    maxLeveltf.setText("");
+                    preOrderLeveltf.setText("");
+                }
+                else{
+                    System.out.println("not");
+                }
+                
+            }
+        }catch(ClassNotFoundException | SQLException e){
+            System.out.println(e);
+        }
+    }
+    private void delete(){
+         query ="delete from itemDetail where itemCode=?";
                  
                 try {
                     con = mc.getConnection();
@@ -172,34 +195,6 @@ public class Itementry extends JFrame{
                     Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
                 }
                         
-            }
-            
-        });
-        update.addActionListener(new ActionListener(){
-
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                query ="select * from itemdetail where itemCode =?";
-                try{
-                    con = mc.getConnection();
-                    PreparedStatement ps = con.prepareStatement(query);
-                    ps.setString(1,itemCode.getText());
-                    
-                    if()
-                }
-                catch(Exception e){
-                    System.out.println(e);
-                }
-            }
-            
-        });
-        /**
-         * Frame Attributes
-         */
-        this.setLayout(null);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }

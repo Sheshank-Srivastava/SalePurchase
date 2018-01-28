@@ -77,7 +77,7 @@ public class Main extends JFrame{
         setExtendedState(JFrame.MAXIMIZED_BOTH);
     }
     public static void main(String[] args){
-        Itementry itementry = new Itementry();
-        itementry.itemFrame();
+        SaleApplication sa = new SaleApplication();
+        sa.firstFrame();
     }
 }

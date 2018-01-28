@@ -16,29 +16,49 @@ import javax.swing.*;
 public class SaleApplication extends JFrame{
     
     JMenuBar mbr = new JMenuBar();
-    JMenu file,search,edit ;
+    JMenu item,customer,supplier,orderReceive,order,sale,purchase ;
+    JMenuItem addItem,deleteItem,updateItem,query;
     public SaleApplication(){
         
     }
     public  void firstFrame(){
-        JMenuItem item = new JMenuItem("Item");
-        file =new JMenu("file");
-        file.add(item);
-        mbr.add(file);
-        edit =new JMenu("edit");
-        mbr.add(edit);
-        search =new JMenu("search");
-        mbr.add(search);
+        item = new JMenu("Item");
+        addItem= new JMenuItem("Add Item");
+        item.add(addItem);
+        deleteItem= new JMenuItem("Delete Item");
+        item.add(deleteItem);
+        updateItem= new JMenuItem("updateItem");
+        item.add(updateItem);
+        query= new JMenuItem("Query");
+        item.add(query);
+        mbr.add(item);
+        
+        customer = new JMenu("Customer");
+        mbr.add(customer);
+        
+        supplier = new JMenu("Supplier");
+        mbr.add(supplier);
+        
+        orderReceive = new JMenu("Order Receive");
+        mbr.add(orderReceive);
+        
+        order = new JMenu("Order");
+        mbr.add(order);
+        
+        sale = new JMenu("Sale");
+        mbr.add(sale);
+        
+        purchase = new JMenu("Purchase");
+        mbr.add(purchase);
+        
         setJMenuBar(mbr);
-        item.addActionListener(new ActionListener(){
-            
+        addItem.addActionListener(new ActionListener(){
+
             @Override
             public void actionPerformed(ActionEvent ae) {
-                Itementry ie = new Itementry();
-                ie.itemFrame();
-                
+                new tabForApp();
             }
-            
+        
         });
         /**
          * frame attribute
