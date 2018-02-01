@@ -133,10 +133,10 @@ public class Itementry extends JFrame{
         /**
          * Frame Attributes
          */
-        this.setLayout(null);
-        this.setExtendedState(JFrame.MAXIMIZED_BOTH);
-        this.setVisible(true);
-        this.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        setLayout(null);
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     private void insert(){
         String iCode=itemCodetf.getText();
@@ -197,7 +197,9 @@ public class Itementry extends JFrame{
             if(p==1){
                 JOptionPane.showMessageDialog(delete,"Deletion is successfull");
             }
-        } catch (SQLException | ClassNotFoundException ex) {
+        } catch (SQLException ex) {
+            Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
+        } catch (ClassNotFoundException ex) {
             Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
         }
         

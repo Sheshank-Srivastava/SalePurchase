@@ -18,6 +18,11 @@ public class SaleApplication extends JFrame{
     JMenuBar mbr = new JMenuBar();
     JMenu item,customer,supplier,orderReceive,order,sale,purchase ;
     JMenuItem addItem,deleteItem,updateItem,query;
+    JMenuItem cAddItem,cDeleteItem,cUpdateItem,cQuery;
+    JMenuItem sAddItem,sDeleteItem,sUpdateItem,sQuery;
+    JMenuItem orAddItem,orDeleteItem,orUpdateItem,orQuery;
+    JMenuItem saAddItem,saDeleteItem,saUpdateItem,saQuery;
+    JMenuItem pAddItem,pDeleteItem,pUpdateItem,pQuery;
     public SaleApplication(){
         
     }
@@ -34,6 +39,14 @@ public class SaleApplication extends JFrame{
         mbr.add(item);
         
         customer = new JMenu("Customer");
+        cAddItem= new JMenuItem("Add Customer");
+        customer.add(cAddItem);
+        cDeleteItem= new JMenuItem("Delete Customer");
+        customer.add(cDeleteItem);
+        cUpdateItem= new JMenuItem("Update Customer");
+        customer.add(cUpdateItem);
+        cQuery= new JMenuItem("Query");
+        customer.add(cQuery); 
         mbr.add(customer);
         
         supplier = new JMenu("Supplier");
@@ -56,7 +69,17 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-              new Itementry();
+                Itementry itementry = new Itementry();
+                itementry.itemFrame();
+            }
+        });
+        
+        cAddItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+              
+               new Cust();
             }
         
         });
@@ -69,7 +92,6 @@ public class SaleApplication extends JFrame{
         setLayout(null);
         setVisible(true);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
