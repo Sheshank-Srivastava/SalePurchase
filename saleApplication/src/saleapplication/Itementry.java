@@ -7,6 +7,8 @@ package saleapplication;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.WindowAdapter;
+import java.awt.event.WindowEvent;
 import java.sql.*;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -26,8 +28,8 @@ public class Itementry extends JFrame{
     MakeConnection mc = new MakeConnection();
     Connection con;
     
-    public void itemFrame(){
-        
+    public void itemFrame( Object obj){
+        System.out.println(this.toString());
 //------------------------------------------------------------------------------     itemCode
         
         itemCode= new JLabel("ItemCode");
@@ -136,7 +138,12 @@ public class Itementry extends JFrame{
         setLayout(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
-        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        this.addWindowListener(new WindowAdapter(){
+            public void windowClosing(WindowEvent we) {
+                System.gc();
+                System.exit(0);
+            }
+        });
     }
     private void insert(){
         String iCode=itemCodetf.getText();

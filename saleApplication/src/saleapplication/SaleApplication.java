@@ -20,13 +20,15 @@ public class SaleApplication extends JFrame{
     JMenuItem addItem,deleteItem,updateItem,query;
     JMenuItem cAddItem,cDeleteItem,cUpdateItem,cQuery;
     JMenuItem sAddItem,sDeleteItem,sUpdateItem,sQuery;
+    JMenuItem oAddItem,oDeleteItem,oUpdateItem,oQuery;
     JMenuItem orAddItem,orDeleteItem,orUpdateItem,orQuery;
     JMenuItem saAddItem,saDeleteItem,saUpdateItem,saQuery;
-    JMenuItem pAddItem,pDeleteItem,pUpdateItem,pQuery;
+    JMenuItem pAddItem,pUpdateItem,pQuery;
     public SaleApplication(){
         
     }
     public  void firstFrame(){
+      //---------------------------------------------------------------
         item = new JMenu("Item");
         addItem= new JMenuItem("Add Item");
         item.add(addItem);
@@ -37,7 +39,7 @@ public class SaleApplication extends JFrame{
         query= new JMenuItem("Query");
         item.add(query);
         mbr.add(item);
-        
+      //---------------------------------------------------------------  
         customer = new JMenu("Customer");
         cAddItem= new JMenuItem("Add Customer");
         customer.add(cAddItem);
@@ -48,29 +50,61 @@ public class SaleApplication extends JFrame{
         cQuery= new JMenuItem("Query");
         customer.add(cQuery); 
         mbr.add(customer);
-        
+      //---------------------------------------------------------------  
         supplier = new JMenu("Supplier");
+        sAddItem= new JMenuItem("Add Supplier");
+        supplier.add(sAddItem);
+        sDeleteItem= new JMenuItem("Delete Supplier");
+        supplier.add(sDeleteItem);
+        sUpdateItem= new JMenuItem("Update Supplier");
+        supplier.add(sUpdateItem);
+        sQuery= new JMenuItem("Query");
+        supplier.add(sQuery); 
         mbr.add(supplier);
-        
+       //--------------------------------------------------------------- 
         orderReceive = new JMenu("Order Receive");
+        orAddItem= new JMenuItem("Add Order Receive");
+        orderReceive.add(orAddItem);
+        orDeleteItem= new JMenuItem("Delete Order Receive");
+        orderReceive.add(orDeleteItem);
+        orUpdateItem= new JMenuItem("Update Order Receive");
+        orderReceive.add(orUpdateItem);
+        orQuery= new JMenuItem("Query");
+        orderReceive.add(orQuery); 
         mbr.add(orderReceive);
-        
+     //---------------------------------------------------------------   
         order = new JMenu("Order");
+        oAddItem= new JMenuItem("Add Order Receive");
+        order.add(oAddItem);
+        oDeleteItem= new JMenuItem("Delete Order Receive");
+        order.add(oDeleteItem);
+        oUpdateItem= new JMenuItem("Update Order Receive");
+        order.add(oUpdateItem);
+        oQuery= new JMenuItem("Query");
+        order.add(oQuery); 
         mbr.add(order);
-        
+     //---------------------------------------------------------------   
         sale = new JMenu("Sale");
+        
         mbr.add(sale);
-        
+     //---------------------------------------------------------------   
         purchase = new JMenu("Purchase");
+        pAddItem= new JMenuItem("Add Order Receive");
+        purchase.add(pAddItem);
+     
+        pUpdateItem= new JMenuItem("Update Order Receive");
+        purchase.add(pUpdateItem);
+        pQuery= new JMenuItem("Query");
+        purchase.add(pQuery); 
         mbr.add(purchase);
-        
+     //---------------------------------------------------------------   
         setJMenuBar(mbr);
         addItem.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent ae) {
                 Itementry itementry = new Itementry();
-                itementry.itemFrame();
+                itementry.itemFrame(itementry);
             }
         });
         
@@ -79,7 +113,7 @@ public class SaleApplication extends JFrame{
             @Override
             public void actionPerformed(ActionEvent ae) {
               
-               new Cust();
+              
             }
         
         });
@@ -92,6 +126,7 @@ public class SaleApplication extends JFrame{
         setLayout(null);
         setVisible(true);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
     }
     
 }
