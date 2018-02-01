@@ -56,7 +56,7 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new tabForApp();
+              new Itementry();
             }
         
         });

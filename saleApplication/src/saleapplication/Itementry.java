@@ -29,6 +29,7 @@ public class Itementry extends JFrame{
     public void itemFrame(){
         
 //------------------------------------------------------------------------------     itemCode
+        
         itemCode= new JLabel("ItemCode");
         itemCode.setBounds(xaxis, yaxis, 60, 30);
         add(itemCode);
@@ -36,6 +37,7 @@ public class Itementry extends JFrame{
         itemCodetf.setBounds(xaxis+80, yaxis, 100, 30);
         add(itemCodetf);
 //------------------------------------------------------------------------------      itemName
+        
         yaxis+=60;
         itemName = new JLabel("ItemName");
         itemName.setBounds(xaxis, yaxis, 60, 30);
@@ -44,6 +46,7 @@ public class Itementry extends JFrame{
         itemNametf.setBounds(xaxis+80, yaxis, 100, 30);
         add(itemNametf);
 //------------------------------------------------------------------------------      rate
+        
         yaxis+=60;
         rate = new JLabel("Rate");
         rate.setBounds(xaxis, yaxis, 60, 30);
@@ -52,6 +55,7 @@ public class Itementry extends JFrame{
         ratetf.setBounds(xaxis+80, yaxis, 100, 30);
         add(ratetf);
 //------------------------------------------------------------------------------     StockAv
+        
         yaxis+=60;
         StockAv = new JLabel("Stock Available");
         StockAv.setBounds(xaxis, yaxis, 100, 30);
@@ -60,6 +64,7 @@ public class Itementry extends JFrame{
         StockAvtf.setBounds(xaxis+80, yaxis, 100, 30);
         add(StockAvtf);
 //------------------------------------------------------------------------------   minLevel
+        
         yaxis+=60;
         minLevel = new JLabel("Min Level");
         minLevel.setBounds(xaxis, yaxis, 100, 30);
@@ -68,6 +73,7 @@ public class Itementry extends JFrame{
         minLeveltf.setBounds(xaxis+80, yaxis, 100, 30);
         add(minLeveltf);
 //------------------------------------------------------------------------------        maxLevel
+        
         yaxis+=60;
         maxLevel = new JLabel("Max Level");
         maxLevel.setBounds(xaxis, yaxis, 100, 30);
@@ -76,6 +82,7 @@ public class Itementry extends JFrame{
         maxLeveltf.setBounds(xaxis+80, yaxis, 100, 30);
         add(maxLeveltf);
 //------------------------------------------------------------------------------     preOrderLevel
+        
         yaxis+=60;
         preOrderLevel = new JLabel("PreOrder Level");
         preOrderLevel.setBounds(xaxis, yaxis, 100, 30);
@@ -84,6 +91,7 @@ public class Itementry extends JFrame{
         preOrderLeveltf.setBounds(xaxis+80, yaxis, 100, 30);
         add(preOrderLeveltf);
 //------------------------------------------------------------------------------
+        
         insert = new JButton("INSERT");
         insert.setBounds(250,50,100,40);
         add(insert);
@@ -93,29 +101,29 @@ public class Itementry extends JFrame{
         delete = new JButton("DELETE");
         delete.setBounds(250,150,100,40);
         add(delete);
+     
         /**
          * Button Action
-         */
+         */        
         
         insert.addActionListener(new ActionListener(){
             
-            
             @Override
             public void actionPerformed(ActionEvent ae) {
-              insert();
+                insert();
             }
         });
         
         delete.addActionListener(new ActionListener(){
-
+            
             @Override
             public void actionPerformed(ActionEvent ae) {
-               delete();
+                delete();
             }
             
         });
         update.addActionListener(new ActionListener(){
-
+            
             @Override
             public void actionPerformed(ActionEvent ae) {
                 
@@ -179,22 +187,20 @@ public class Itementry extends JFrame{
         }
     }
     private void delete(){
-         query ="delete from itemDetail where itemCode=?";
-                 
-                try {
-                    con = mc.getConnection();
-                    PreparedStatement ps =con.prepareStatement(query);
-                    ps.setString(1, itemCodetf.getText());
-                    int p = ps.executeUpdate();
-                    if(p==1){
-                        JOptionPane.showMessageDialog(delete,"Deletion is successfull");
-                    }
-                } catch (SQLException ex) {
-                    Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
-                } catch (ClassNotFoundException ex) {
-                    Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
-                }
-                        
+        query ="delete from itemDetail where itemCode=?";
+        
+        try {
+            con = mc.getConnection();
+            PreparedStatement ps =con.prepareStatement(query);
+            ps.setString(1, itemCodetf.getText());
+            int p = ps.executeUpdate();
+            if(p==1){
+                JOptionPane.showMessageDialog(delete,"Deletion is successfull");
+            }
+        } catch (SQLException | ClassNotFoundException ex) {
+            Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
+        }
+        
     }
     
 }
