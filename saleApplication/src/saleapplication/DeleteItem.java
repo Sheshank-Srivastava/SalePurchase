@@ -24,6 +24,6 @@ public class DeleteItem extends JFrame{
         * Frame Attributes
         */
        setExtendedState(JFrame.MAXIMIZED_BOTH);
-       
+       setVisible(true);
     }
 }
