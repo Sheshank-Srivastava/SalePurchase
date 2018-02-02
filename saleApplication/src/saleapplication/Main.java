@@ -79,6 +79,7 @@ public class Main extends JFrame{
     public static void main(String[] args){
         SaleApplication sa = new SaleApplication();
         sa.firstFrame();
+        sa.setTitle("Sale-Purchase");
 //        Itementry itementry = new Itementry();
 //        itementry.itemFrame();
     }

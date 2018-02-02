@@ -138,10 +138,10 @@ public class Itementry extends JFrame{
         setLayout(null);
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
+        setTitle("Item Entry");
         this.addWindowListener(new WindowAdapter(){
             public void windowClosing(WindowEvent we) {
                 System.gc();
-                System.exit(0);
             }
         });
     }
