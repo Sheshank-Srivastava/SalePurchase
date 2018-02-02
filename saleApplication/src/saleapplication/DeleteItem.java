@@ -13,7 +13,17 @@ import javax.swing.*;
  */
 public class DeleteItem extends JFrame{
     
+    JLabel itemCode,itemName,rate,stockAvail,minLevel,maxLevel,preOrderLevel;
+    JLabel itemNameT,rateT,stockAvailT,minLevelT,maxLevelT,preOrderLevelT;
+    JTextField itemCodetf;
     public void DeleteItem(){
-        
+       itemCode =new JLabel("Item Code");
+       itemCode.setBounds(10, 10, 60, 30);
+       add(itemCode);
+       /**
+        * Frame Attributes
+        */
+       setExtendedState(JFrame.MAXIMIZED_BOTH);
+       
     }
 }
