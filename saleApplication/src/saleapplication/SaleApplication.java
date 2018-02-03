@@ -115,6 +115,13 @@ public class SaleApplication extends JFrame{
                 new DeleteItem();
             }
         });
+        updateItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new UpdateItem();
+            }
+        });
         cAddItem.addActionListener(new ActionListener(){
 
             @Override
