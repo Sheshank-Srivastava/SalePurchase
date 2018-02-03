@@ -74,11 +74,11 @@ public class SaleApplication extends JFrame{
         mbr.add(orderReceive);
      //---------------------------------------------------------------   
         order = new JMenu("Order");
-        oAddItem= new JMenuItem("Add Order Receive");
+        oAddItem= new JMenuItem("Add Order");
         order.add(oAddItem);
-        oDeleteItem= new JMenuItem("Delete Order Receive");
+        oDeleteItem= new JMenuItem("Delete Order");
         order.add(oDeleteItem);
-        oUpdateItem= new JMenuItem("Update Order Receive");
+        oUpdateItem= new JMenuItem("Update Order");
         order.add(oUpdateItem);
         oQuery= new JMenuItem("Query");
         order.add(oQuery); 
@@ -89,10 +89,10 @@ public class SaleApplication extends JFrame{
         mbr.add(sale);
      //---------------------------------------------------------------   
         purchase = new JMenu("Purchase");
-        pAddItem= new JMenuItem("Add Order Receive");
+        pAddItem= new JMenuItem("Add purchase");
         purchase.add(pAddItem);
      
-        pUpdateItem= new JMenuItem("Update Order Receive");
+        pUpdateItem= new JMenuItem("Update Purchase");
         purchase.add(pUpdateItem);
         pQuery= new JMenuItem("Query");
         purchase.add(pQuery); 
