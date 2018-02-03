@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class UpdatePurchase {
-    
+public class UpdatePurchase extends JFrame {
+    public UpdatePurchase(){
+         setLayout(null);
+        setTitle("Update_Purchase");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

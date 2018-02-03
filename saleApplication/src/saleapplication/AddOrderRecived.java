@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class AddOrderRecived {
-    
+public class AddOrderRecived extends JFrame{
+    public AddOrderRecived(){
+        setLayout(null);
+        setTitle("Add Order Recived");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

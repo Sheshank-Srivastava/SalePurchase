@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class QuerySupplier {
-    
+public class QuerySupplier extends JFrame {
+    public QuerySupplier(){
+         setLayout(null);
+        setTitle("Query Supplier");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

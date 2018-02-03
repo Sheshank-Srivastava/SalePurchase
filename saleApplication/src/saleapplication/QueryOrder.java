@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class QueryOrder {
-    
+public class QueryOrder extends JFrame {
+    public QueryOrder(){
+         setLayout(null);
+        setTitle("Query Order");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

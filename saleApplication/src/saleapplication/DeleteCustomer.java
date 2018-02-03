@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class DeleteCustomer {
-    
+public class DeleteCustomer  extends JFrame{
+    public DeleteCustomer(){
+         setLayout(null);
+        setTitle("Delete Customer");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

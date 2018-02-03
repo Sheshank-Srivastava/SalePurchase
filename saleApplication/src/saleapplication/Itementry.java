@@ -128,10 +128,11 @@ public class Itementry extends JFrame{
             
             @Override
             public void actionPerformed(ActionEvent ae) {
-               
+               new UpdateItem();
             }
             
         });
+        
         /**
          * Frame Attributes
          */

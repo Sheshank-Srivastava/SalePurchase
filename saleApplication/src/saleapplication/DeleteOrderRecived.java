@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class DeleteOrderRecived {
-    
+public class DeleteOrderRecived extends JFrame{
+    public DeleteOrderRecived(){
+         setLayout(null);
+        setTitle("Delete Order Recived");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

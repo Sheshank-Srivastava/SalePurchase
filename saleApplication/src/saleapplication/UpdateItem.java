@@ -82,7 +82,7 @@ public class UpdateItem extends JFrame {
         /**
          * Action to the Button is Defined here
          * On First click All the Remaining Fields Are Filled from the database
-         * And change the button Text to Delete
+         * And change the button Text to update
          */
         action.addActionListener(new ActionListener(){
             

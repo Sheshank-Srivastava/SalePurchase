@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class AddSuppiler {
-    
+public class QueryItem  extends JFrame{
+    public QueryItem(){
+        setLayout(null);
+        setTitle("Query-Item");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

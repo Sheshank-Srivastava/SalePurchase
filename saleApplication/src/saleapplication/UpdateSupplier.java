@@ -11,10 +11,11 @@ import javax.swing.JFrame;
  *
  * @author TANSU
  */
-public class DeleteSupplier extends JFrame{
-    public DeleteSupplier(){
-         setLayout(null);
-        setTitle("Delete Supplier");
+public class UpdateSupplier extends JFrame{
+   
+    public UpdateSupplier(){
+        setLayout(null);
+        setTitle("Update-Supplier");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
     }

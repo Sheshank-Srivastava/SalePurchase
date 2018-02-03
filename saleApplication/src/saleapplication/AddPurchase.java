@@ -5,10 +5,18 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class AddPurchase {
+public class AddPurchase  extends JFrame{
+    public AddPurchase(){
+         setLayout(null);
+        setTitle("Add Purchase");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
     
 }

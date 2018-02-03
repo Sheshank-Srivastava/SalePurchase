@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class QueryPurchase {
-    
+public class QueryPurchase extends JFrame{
+    public QueryPurchase(){
+         setLayout(null);
+        setTitle("Query Purchase");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class UpdateCustomer {
-    
+public class UpdateCustomer extends JFrame{
+    public UpdateCustomer(){
+         setLayout(null);
+        setTitle("Update Customer");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

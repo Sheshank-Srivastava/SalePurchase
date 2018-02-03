@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class UpdateSuppiler {
-    
+public class AddSupplier extends JFrame {
+    public AddSupplier(){
+         setLayout(null);
+        setTitle("Add Supplier");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

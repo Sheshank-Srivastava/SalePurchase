@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class QueryOrderRecived {
-    
+public class QueryOrderRecived extends JFrame {
+    public QueryOrderRecived(){
+         setLayout(null);
+        setTitle("Query Order Recived");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

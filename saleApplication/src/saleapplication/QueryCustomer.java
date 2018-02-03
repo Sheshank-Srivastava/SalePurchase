@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class QueryCustomer {
-    
+public class QueryCustomer extends JFrame {
+    public QueryCustomer(){
+         setLayout(null);
+        setTitle("Query-Item");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }            
 }

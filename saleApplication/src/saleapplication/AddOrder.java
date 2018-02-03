@@ -5,10 +5,17 @@
  */
 package saleapplication;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author TANSU
  */
-public class AddOrder {
-    
+public class AddOrder extends JFrame {
+    public AddOrder(){
+         setLayout(null);
+        setTitle("Add Order");
+        setExtendedState(JFrame.MAXIMIZED_BOTH);
+        setVisible(true);
+    }
 }

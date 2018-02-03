@@ -17,13 +17,13 @@ public class SaleApplication extends JFrame{
     
     JMenuBar mbr = new JMenuBar();
     JMenu item,customer,supplier,orderReceive,order,sale,purchase ;
-    JMenuItem addItem,deleteItem,updateItem,query;
-    JMenuItem cAddItem,cDeleteItem,cUpdateItem,cQuery;
-    JMenuItem sAddItem,sDeleteItem,sUpdateItem,sQuery;
-    JMenuItem oAddItem,oDeleteItem,oUpdateItem,oQuery;
-    JMenuItem orAddItem,orDeleteItem,orUpdateItem,orQuery;
-    JMenuItem saAddItem,saDeleteItem,saUpdateItem,saQuery;
-    JMenuItem pAddItem,pUpdateItem,pQuery;
+    JMenuItem addItem,deleteItem,updateItem,query;      //Item
+    JMenuItem cAddItem,cDeleteItem,cUpdateItem,cQuery;  //customer
+    JMenuItem sAddItem,sDeleteItem,sUpdateItem,sQuery;  //suppiler
+    JMenuItem oAddItem,oDeleteItem,oUpdateItem,oQuery;  //order
+    JMenuItem orAddItem,orDeleteItem,orUpdateItem,orQuery;//order Recived
+    JMenuItem saAddItem,saDeleteItem,saUpdateItem,saQuery;//sale
+    JMenuItem pAddItem,pUpdateItem,pQuery;              //purchase
     public SaleApplication(){
         
     }
@@ -99,6 +99,9 @@ public class SaleApplication extends JFrame{
         mbr.add(purchase);
      //---------------------------------------------------------------   
         setJMenuBar(mbr);
+        /**
+         * Action set to the "ITEM" menu
+         */
         addItem.addActionListener(new ActionListener(){
 
             @Override
@@ -122,12 +125,174 @@ public class SaleApplication extends JFrame{
                 new UpdateItem();
             }
         });
+        query.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new QueryItem();
+            }
+        
+        });
+        /**
+         * Action set to the "CUSTOMER" Menu
+         */
         cAddItem.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-              
-              
+                new AddCustomer();
+            }
+        
+        });
+        cDeleteItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new DeleteCustomer();
+            }
+        });
+       cUpdateItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new UpdateCustomer();
+            }
+        });
+        cQuery.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new QueryCustomer();
+            }
+        
+        });
+        /**
+         * Action set to the "SUPPLIER" Menu
+         */
+        sAddItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new AddSupplier();
+            }
+        
+        });
+        sDeleteItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new DeleteSupplier();
+            }
+        });
+        sUpdateItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new UpdateSupplier();
+            }
+        });
+        sQuery.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new QuerySupplier();
+            }
+        
+        });
+        /**
+         * Action set to the "Order Recived" Menu
+         */
+        orAddItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new AddOrderRecived();
+            }
+        
+        });
+        orDeleteItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new DeleteOrderRecived();
+            }
+        });
+        orUpdateItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new UpdateOrderRecived();
+            }
+        });
+        orQuery.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new QueryOrderRecived();
+            }
+        
+        });
+        /**
+         * Action set to the "Order" Menu
+         */
+        oAddItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new AddOrderRecived();
+            }
+        
+        });
+        oDeleteItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new DeleteOrderRecived();
+            }
+        });
+        oUpdateItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new UpdateOrderRecived();
+            }
+        });
+        oQuery.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new QueryOrderRecived();
+            }
+        
+        });
+        /**
+         * Action set to the "Sale"
+         */
+        
+        /**
+         * Action set to the "Purchase"
+         */
+          pAddItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new AddPurchase();
+            }
+        
+        });
+     
+        pUpdateItem.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new UpdatePurchase();
+            }
+        });
+        pQuery.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new QueryPurchase();
             }
         
         });
