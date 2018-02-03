@@ -195,7 +195,8 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new QuerySupplier();
+               QuerySupplier qs= new QuerySupplier();
+               
             }
         
         });

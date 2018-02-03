@@ -90,6 +90,11 @@ public class DeleteItem extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 click++;
                 if(click==1){
+                    try{
+                                                
+                    }catch(Exception e){
+                        
+                    }
                     action.setText("Delete");
                     
                 }
