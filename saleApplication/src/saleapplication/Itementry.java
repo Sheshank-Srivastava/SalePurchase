@@ -36,7 +36,7 @@ public class Itementry extends JFrame{
         itemCode.setBounds(xaxis, yaxis, 60, 30);
         add(itemCode);
         itemCodetf = new JTextField();
-        itemCodetf.setBounds(xaxis+80, yaxis, 100, 30);
+        itemCodetf.setBounds(xaxis+100, yaxis, 100, 30);
         add(itemCodetf);
 //------------------------------------------------------------------------------      itemName
         
@@ -45,7 +45,7 @@ public class Itementry extends JFrame{
         itemName.setBounds(xaxis, yaxis, 60, 30);
         add(itemName);
         itemNametf = new JTextField();
-        itemNametf.setBounds(xaxis+80, yaxis, 100, 30);
+        itemNametf.setBounds(xaxis+100, yaxis, 100, 30);
         add(itemNametf);
 //------------------------------------------------------------------------------      rate
         
@@ -54,7 +54,7 @@ public class Itementry extends JFrame{
         rate.setBounds(xaxis, yaxis, 60, 30);
         add(rate);
         ratetf = new JTextField();
-        ratetf.setBounds(xaxis+80, yaxis, 100, 30);
+        ratetf.setBounds(xaxis+100, yaxis, 100, 30);
         add(ratetf);
 //------------------------------------------------------------------------------     StockAv
         
@@ -63,7 +63,7 @@ public class Itementry extends JFrame{
         StockAv.setBounds(xaxis, yaxis, 100, 30);
         add(StockAv);
         StockAvtf = new JTextField();
-        StockAvtf.setBounds(xaxis+80, yaxis, 100, 30);
+        StockAvtf.setBounds(xaxis+100, yaxis, 100, 30);
         add(StockAvtf);
 //------------------------------------------------------------------------------   minLevel
         
@@ -72,7 +72,7 @@ public class Itementry extends JFrame{
         minLevel.setBounds(xaxis, yaxis, 100, 30);
         add(minLevel);
         minLeveltf = new JTextField();
-        minLeveltf.setBounds(xaxis+80, yaxis, 100, 30);
+        minLeveltf.setBounds(xaxis+100, yaxis, 100, 30);
         add(minLeveltf);
 //------------------------------------------------------------------------------        maxLevel
         
@@ -81,7 +81,7 @@ public class Itementry extends JFrame{
         maxLevel.setBounds(xaxis, yaxis, 100, 30);
         add(maxLevel);
         maxLeveltf = new JTextField();
-        maxLeveltf.setBounds(xaxis+80, yaxis, 100, 30);
+        maxLeveltf.setBounds(xaxis+100, yaxis, 100, 30);
         add(maxLeveltf);
 //------------------------------------------------------------------------------     preOrderLevel
         
@@ -90,20 +90,14 @@ public class Itementry extends JFrame{
         preOrderLevel.setBounds(xaxis, yaxis, 100, 30);
         add(preOrderLevel);
         preOrderLeveltf = new JTextField();
-        preOrderLeveltf.setBounds(xaxis+80, yaxis, 100, 30);
+        preOrderLeveltf.setBounds(xaxis+100, yaxis, 100, 30);
         add(preOrderLeveltf);
 //------------------------------------------------------------------------------
-        
+        yaxis+=60;
         insert = new JButton("INSERT");
-        insert.setBounds(250,50,100,40);
+        insert.setBounds(xaxis,yaxis,100,30);
         add(insert);
-        update = new JButton("UPDATE");
-        update.setBounds(250,100,100,40);
-        add(update);
-        delete = new JButton("DELETE");
-        delete.setBounds(250,150,100,40);
-        add(delete);
-     
+            
         /**
          * Button Action
          */        
@@ -114,23 +108,6 @@ public class Itementry extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 insert();
             }
-        });
-        
-        delete.addActionListener(new ActionListener(){
-            
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-                delete();
-            }
-            
-        });
-        update.addActionListener(new ActionListener(){
-            
-            @Override
-            public void actionPerformed(ActionEvent ae) {
-               new UpdateItem();
-            }
-            
         });
         
         /**
