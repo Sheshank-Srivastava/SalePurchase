@@ -171,23 +171,21 @@ public class Itementry extends JFrame{
             System.out.println(e);
         }
     }
-    private void delete(){
-        query ="delete from itemDetail where itemCode=?";
-        
-        try {
-            con = mc.getConnection();
-            PreparedStatement ps =con.prepareStatement(query);
-            ps.setString(1, itemCodetf.getText());
-            int p = ps.executeUpdate();
-            if(p==1){
-                JOptionPane.showMessageDialog(delete,"Deletion is successfull");
-            }
-        } catch (SQLException ex) {
-            Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
-        } catch (ClassNotFoundException ex) {
-            Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
-        }
-        
-    }
+//    private void delete(){
+//        query ="delete from itemDetail where itemCode=?";
+//        
+//        try {
+//            con = mc.getConnection();
+//            PreparedStatement ps =con.prepareStatement(query);
+//            ps.setString(1, itemCodetf.getText());
+//            int p = ps.executeUpdate();
+//            if(p==1){
+//                JOptionPane.showMessageDialog(delete,"Deletion is successfull");
+//            }
+//        } catch (SQLException | ClassNotFoundException ex) {
+//            Logger.getLogger(Itementry.class.getName()).log(Level.SEVERE, null, ex);
+//        }
+//        
+//    }
     
 }
