@@ -129,7 +129,7 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new QueryItem();
+                QueryItem queryItem = new QueryItem();
             }
         
         });
@@ -140,7 +140,7 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new AddCustomer();
+                AddCustomer addCustomer = new AddCustomer();
             }
         
         });
@@ -148,21 +148,21 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new DeleteCustomer();
+                DeleteCustomer deleteCustomer = new DeleteCustomer();
             }
         });
        cUpdateItem.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new UpdateCustomer();
+                UpdateCustomer updateCustomer = new UpdateCustomer();
             }
         });
         cQuery.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new QueryCustomer();
+                QueryCustomer queryCustomer = new QueryCustomer();
             }
         
         });
