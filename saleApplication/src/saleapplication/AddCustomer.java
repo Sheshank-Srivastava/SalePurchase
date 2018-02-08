@@ -74,7 +74,7 @@ public class AddCustomer  extends JFrame{
         add(custCitytf);
         
         yAxies+=40;
-        custPin= new JLabel("City");
+        custPin= new JLabel("Pin");
         custPin.setBounds(xAxies, yAxies, 120, 30);
         add(custPin);
         custPintf = new JTextField();
@@ -82,7 +82,7 @@ public class AddCustomer  extends JFrame{
         add(custPintf);
         
         yAxies+=40;
-        custStatus= new JLabel("City");
+        custStatus= new JLabel("Status");
         custStatus.setBounds(xAxies, yAxies, 120, 30);
         add(custStatus);
         status = new JComboBox(sta);
@@ -127,7 +127,7 @@ public class AddCustomer  extends JFrame{
                     ps.setString(2, custNametf.getText());
                     ps.setString(3, custAddtf.getText());
                     ps.setString(4, custStatetf.getText());
-                    ps.setString(5,custCity.getText());
+                    ps.setString(5,custCitytf.getText());
                     ps.setString(6, custPintf.getText());
                     ps.setString(7, status.getSelectedItem().toString());
                     int p =ps.executeUpdate();
