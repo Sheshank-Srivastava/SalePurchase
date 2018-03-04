@@ -144,7 +144,7 @@ public class UpdateCustomer extends JFrame{
                                 custPintf.setText(rs.getString(5));
                                 status.setSelectedItem(rs.getString(6));
                                 saveb.setText("Update");
-                            }
+                             }
                             else{
                                 click=0;
                                 JOptionPane.showMessageDialog(saveb, "Item Doesn't Exsist");
@@ -176,7 +176,6 @@ public class UpdateCustomer extends JFrame{
                             int pp= ps.executeUpdate();
                             if(pp==1){
                                 JOptionPane.showMessageDialog(saveb,"data is updated");
-                                
                                 click=0;
                             }
                         } catch (SQLException | ClassNotFoundException ex) {
@@ -185,10 +184,7 @@ public class UpdateCustomer extends JFrame{
                     }
                 }
             }
-            
-        });
-        
-        
+         });
         setLayout(null);
         setTitle("Update Customer");
         setExtendedState(JFrame.MAXIMIZED_BOTH);

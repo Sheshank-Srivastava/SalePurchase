@@ -3,9 +3,10 @@
     <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
     <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
         <group>
-            <file>file:/E:/guru%20tagh%20bahadur/java/practice%20java/SalePurchase/saleApplication/src/saleapplication/QueryItem.java</file>
-            <file>file:/E:/guru%20tagh%20bahadur/java/practice%20java/SalePurchase/saleApplication/src/saleapplication/DeleteItem.java</file>
-            <file>file:/E:/guru%20tagh%20bahadur/java/practice%20java/SalePurchase/saleApplication/src/saleapplication/Itementry.java</file>
+            <file>file:/E:/guru%20tagh%20bahadur/java/practice%20java/SalePurchase/saleApplication/src/saleapplication/SaleApplication.java</file>
+            <file>file:/E:/guru%20tagh%20bahadur/java/practice%20java/SalePurchase/saleApplication/src/saleapplication/AddCustomer.java</file>
+            <file>file:/E:/guru%20tagh%20bahadur/java/practice%20java/SalePurchase/saleApplication/src/saleapplication/SaBill.java</file>
+            <file>file:/E:/guru%20tagh%20bahadur/java/practice%20java/SalePurchase/saleApplication/src/saleapplication/AddOrder.java</file>
         </group>
     </open-files>
 </project-private>

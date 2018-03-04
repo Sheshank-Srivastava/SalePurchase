@@ -29,7 +29,7 @@ public class AddCustomer  extends JFrame{
     JComboBox status;
     JButton saveb;
     int xAxies=10,yAxies=30;
-    String sta[] ={"Excellent","Good","Annoying"};
+  String   sta[] ={"Excellent","Good","Annoying"};
     String query;
     MakeConnection mc = new MakeConnection();
     Connection con;
@@ -95,18 +95,28 @@ public class AddCustomer  extends JFrame{
         add(saveb);
         
         /**
-         * Genetrating Customer Code
+         * Generating Customer Code
          */
         try{
-            String custCode = null;
+            String custCode = "";
+            int newCode=000;
             query="select custCode from customer";
             con = mc.getConnection();
             PreparedStatement ps= con.prepareStatement(query);
             ResultSet rs= ps.executeQuery();
             while(rs.next()){
                 custCode =rs.getString(1);
+                System.out.println(custCode);
             }
-            int newCode = Integer.parseInt(custCode)+1;
+            if(custCode!=""){
+                newCode = Integer.parseInt(custCode)+1;
+                System.out.println(newCode);
+            }
+            else{
+                custCode ="991";
+                newCode = Integer.parseInt(custCode)+1;
+                System.out.println(newCode);
+            }
             custCodetf.setText(Integer.toString(newCode));
         }catch(ClassNotFoundException | SQLException e){
             
@@ -120,7 +130,7 @@ public class AddCustomer  extends JFrame{
             public void actionPerformed(ActionEvent ae) {
                 try{
                     System.out.println("hello");
-                    query ="insert into customer values(?,?,?,?,?,?,?)";
+                    query ="insert into suppiler values(?,?,?,?,?,?,?)";
                     con = mc.getConnection();
                     PreparedStatement ps = con.prepareStatement(query);
                     ps.setString(1,custCodetf.getText());

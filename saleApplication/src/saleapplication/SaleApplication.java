@@ -7,6 +7,9 @@ package saleapplication;
 
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.SQLException;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 import javax.swing.*;
 
 /**
@@ -22,7 +25,7 @@ public class SaleApplication extends JFrame{
     JMenuItem sAddItem,sDeleteItem,sUpdateItem,sQuery;  //suppiler
     JMenuItem oAddItem,oDeleteItem,oUpdateItem,oQuery;  //order
     JMenuItem orAddItem,orDeleteItem,orUpdateItem,orQuery;//order Recived
-    JMenuItem saAddItem,saDeleteItem,saUpdateItem,saQuery;//sale
+    JMenuItem saBill,saDeleteItem,saUpdateItem,saQuery;//sale
     JMenuItem pAddItem,pUpdateItem,pQuery;              //purchase
     public SaleApplication(){
         
@@ -85,7 +88,8 @@ public class SaleApplication extends JFrame{
         mbr.add(order);
      //---------------------------------------------------------------   
         sale = new JMenu("Sale");
-        
+         saBill= new JMenuItem("Bill");
+        sale.add(saBill);
         mbr.add(sale);
      //---------------------------------------------------------------   
         purchase = new JMenu("Purchase");
@@ -240,7 +244,11 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new AddOrderRecived();
+                try {
+                    new AddOrder();
+                } catch (ClassNotFoundException | SQLException ex) {
+                    Logger.getLogger(SaleApplication.class.getName()).log(Level.SEVERE, null, ex);
+                }
             }
         
         });
@@ -248,28 +256,34 @@ public class SaleApplication extends JFrame{
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new DeleteOrderRecived();
+                new DeleteOrder();
             }
         });
         oUpdateItem.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new UpdateOrderRecived();
+                new UpdateOrder();
             }
         });
         oQuery.addActionListener(new ActionListener(){
 
             @Override
             public void actionPerformed(ActionEvent ae) {
-                new QueryOrderRecived();
+                new QueryOrder();
             }
         
         });
         /**
          * Action set to the "Sale"
          */
-        
+        saBill.addActionListener(new ActionListener(){
+
+            @Override
+            public void actionPerformed(ActionEvent ae) {
+                new SaBill();
+            }
+        });
         /**
          * Action set to the "Purchase"
          */

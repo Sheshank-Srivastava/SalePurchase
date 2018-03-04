@@ -13,7 +13,7 @@ import javax.swing.JFrame;
  */
 public class AddPurchase  extends JFrame{
     public AddPurchase(){
-         setLayout(null);
+        setLayout(null);
         setTitle("Add Purchase");
         setExtendedState(JFrame.MAXIMIZED_BOTH);
         setVisible(true);
