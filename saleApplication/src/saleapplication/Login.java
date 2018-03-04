@@ -15,6 +15,9 @@ import java.awt.Color;
 import java.awt.Font;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.sql.Connection;
+import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import javax.swing.*;
 
@@ -29,7 +32,8 @@ public class Login extends JFrame {
     JTextField userTf, passwordTf;
     JButton loginB, RegB;
    
-
+    MakeConnection mc = new MakeConnection();
+    Connection con;
     public Login() {
 
         titleL = new JLabel("Sale Purchase");
@@ -70,8 +74,27 @@ public class Login extends JFrame {
             @Override
             public void actionPerformed(ActionEvent ae) {
                
+               try{ 
+                   String query ="select username from login where username=? and password=?";
+                   con = mc.getConnection();
+                   PreparedStatement ps =  con.prepareStatement(query);
+                   ps.setString(1,userTf.getText());
+                   ps.setString(2, passwordTf.getText());
+                   ResultSet rs = ps.executeQuery();
+                   if(rs.next()){
+                       
+                       setVisible(false);  
+                       SaleApplication sa = new SaleApplication();
+                       sa.firstFrame();
+                       sa.setTitle("Sale-Purchase");
+                   }   
+                   else{
+                       JOptionPane.showMessageDialog(loginB, "Invalid user name or Password");
+                   }
+               }catch(Exception e){
+                    System.out.println(e); 
+               }
             }
-            
         });
         setLayout(null);
         setBounds(0,0,500,500);
